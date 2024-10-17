@@ -1,6 +1,22 @@
 <script>
+import axios from 'axios';
+
 export default {
-  
+  data(){
+    return{
+      projects : []
+    }
+  },
+  methods:{
+    getAllProjects(){
+      axios.get('http://127.0.0.1:8000/api/projects').then((res) => {
+        console.log(res.data)
+      })
+    }
+  }, 
+  created(){
+    this.getAllProjects();
+  }
 }
 </script>
 <template>
@@ -10,7 +26,7 @@ export default {
         <h1 class="text-center">Elenco Progetti</h1>
       </div>
       <div class="col-12">
-        
+
       </div>
     </div>
   </div>
