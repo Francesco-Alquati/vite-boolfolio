@@ -20,19 +20,19 @@ export default {
 }
 </script>
 <template>
-  <div class="conteiner">
+  <div class="conteiner container-md container-lg">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 mb-3">
         <h1 class="text-center">Elenco Progetti</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-4">
+    <div class="row gy-4">
+      <div class="col-12 col-md-6 col-lg-4" v-for="proj in projects" :key="proj.id">
         <div class="card">
-          <img class="card-img-top" src="" alt="">
+          <img class="card-img-top" :src="proj.image != null ? `http://127.0.0.1:8000/storage/${proj.image}` : 'https://placehold.co/300x200?text=imagine+copertina' " alt="">
           <div class="card-body">
-            <h4 class="card-title">Titolo</h4>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae illo quasi culpa ullam velit consectetur dolor cumque quas expedita quibusdam repellat ratione, dolore fuga excepturi quaerat? Harum illo voluptatem labore!</p>
+            <h4 class="card-title text-center">{{ proj.name }}</h4>
+            <p>{{ proj.summary }}</p>
           </div>
         </div>
       </div>
