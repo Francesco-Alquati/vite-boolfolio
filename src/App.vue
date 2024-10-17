@@ -3,9 +3,16 @@ export default {
   
 }
 </script>
-<template lang="">
-  <div>
-    
+<template>
+  <div class="conteiner">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Elenco Progetti</h1>
+      </div>
+      <div class="col-12">
+        
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss">
