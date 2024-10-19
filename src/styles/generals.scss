@@ -5,7 +5,12 @@ header{
 
     ul{
         margin-bottom: 0px;
-        
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
         a:hover{
             font-weight: 600;
         }
