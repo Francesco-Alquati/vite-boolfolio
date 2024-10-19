@@ -38,7 +38,7 @@ export default {
 </script>
 <template>
   <AppHeader />
-  <div class="conteiner container-md container-lg">
+  <div class="conteiner container-md container-lg main-content">
     <div class="row">
       <div class="col-12 mb-3">
         <h1 class="text-center">Elenco Progetti</h1>
