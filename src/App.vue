@@ -9,10 +9,9 @@ export default {
     
   },
   data(){
-    return{
-     store
-
-    }
+      return{
+        store
+      }
   }
 }
 </script>
