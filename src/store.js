@@ -12,6 +12,10 @@ export const store = reactive({
         {
             name: 'portfolio',
             label: 'Portfolio'
+        },
+        {
+            name: 'about',
+            label: 'Chi sono'
         }
     ]
 });
