@@ -13,7 +13,7 @@ export default {
 </script>
 <template>
     <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
+        <div class="card card-h">
           <img class="card-img-top" :src="project.image != null ? `http://127.0.0.1:8000/storage/${project.image}` : 'https://placehold.co/300x200?text=imagine+copertina' " alt="">
           <div class="card-body bg-dark text-white">
             <h4 class="card-title text-center text-decoration-underline">{{ project.name }}</h4>
@@ -32,5 +32,7 @@ export default {
       </div>
 </template>
 <style lang="scss" scoped>
-    
+    .card-h{
+        height: 500px;
+    }
 </style>

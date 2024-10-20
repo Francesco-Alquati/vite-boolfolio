@@ -1,4 +1,6 @@
 <script>
+
+import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue';
 
 export default {
@@ -8,13 +10,14 @@ export default {
   },
   data(){
     return{
-     
+     store
+
     }
   }
 }
 </script>
 <template>
-  <AppHeader />
+  <AppHeader :menu="store.menuItems" />
   <router-view></router-view>
 </template>
 <style lang="scss">
