@@ -6,14 +6,17 @@ export default {
     data(){
         return{
             store,
+            success: false,
             project: null
         }
     },
     methods:{
         getProject(){
+            this.success = false
             axios.get(`${store.baseUrl}/projects/${this.$route.params.slug}`).then((res) => {
                 if(res.data.success){
                     this.project = res.data.results
+                    this.success = true
                 }
                 else{
 
@@ -27,7 +30,8 @@ export default {
 }
 </script>
 <template>
-    <div class="container text-white">
+    <div v-if="!success" class="text-white text-center fs-1 mt-5">Caricamento...</div>
+    <div v-else class="container text-white">
         <div class="row my-4">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card">
