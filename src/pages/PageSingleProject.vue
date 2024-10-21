@@ -11,33 +11,39 @@ export default {
     },
     methods:{
         getProject(){
-            axios.get('').then((res) => {
+            axios.get(`${store.baseUrl}/projects/${this.$route.params.slug}`).then((res) => {
                 if(res.data.success){
-                    this.project = res.data.result
+                    this.project = res.data.results
                 }
                 else{
 
                 }
             });
         }
+    },
+    created(){
+        this.getProject();
     }
 }
 </script>
 <template>
     <div class="container text-white">
-        <div class="row">
+        <div class="row my-4">
             <div class="col-12 col-md-6 col-lg-4">
-                <img src="" alt="">
+                <div class="card">
+                    <img class="img-fluid" :src="project.image != null ? `http://127.0.0.1:8000/storage/${project.image}` : 'https://placehold.co/400x200?text=imagine+copertina' " alt="">
+                </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-8 mt-3 card text-center b-shadow">
-                <div class="head">
-                    <h1 class="text-uppercase">Titolo</h1>
-                    <p><strong class="text-warning">Tipologia: </strong>Tipo</p>
-                    <p><strong class="text-success">Tecnologie: </strong>Tecnologie</p>
+            <div class="col-12 col-md-6 col-lg-8 card text-center b-shadow">
+                <div>
+                    <h1 class="text-uppercase mt-4">{{ project.name }}</h1>
+                    <p class="text-warning mt-4">{{ project.type != null ? project.type.name : 'Nessuna Tipologia' }}</p>
+                    <p v-if="project.technologies.length > 0"><span v-for=" tech in project.technologies">{{ tech.name }}</span></p>
+                    <p v-else class="text-success">Nessuna Tecnologia</p>
                 </div>
             </div>
             <div class="col-12">
-                <div class="content text-center mt-5 card b-shadow">
+                <div class="content text-center mt-4 card b-shadow">
                     <p class="p-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla incidunt alias animi quos architecto, esse officiis. Id libero aliquid optio dicta ex! Ipsa iure porro minus aliquam alias laudantium nobis.</p>
                 </div>
             </div>
