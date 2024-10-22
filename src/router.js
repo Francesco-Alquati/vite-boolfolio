@@ -5,6 +5,7 @@ import PagePortfolio from './pages/PagePortfolio.vue';
 import PageSingleProject from './pages/PageSingleProject.vue';
 import PageAbout from './pages/PageAbout.vue';
 import PageNotFound from './pages/PageNotFound.vue';
+import PageContacts from './pages/PageContacts.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -28,6 +29,11 @@ const router = createRouter({
             path: '/about',
             name: 'about',
             component: PageAbout
+        },
+        {
+            path: '/contacts',
+            name: 'contacts',
+            component: PageContacts
         },
         {
             path: '/:pathMatch(.*)*',
